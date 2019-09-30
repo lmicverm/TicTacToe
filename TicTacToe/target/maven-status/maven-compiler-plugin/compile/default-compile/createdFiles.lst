@@ -1,0 +1,16 @@
+com\lennart\tictactoe\Moves\Move.class
+com\lennart\tictactoe\Moves\MoveOFactory$1.class
+com\lennart\tictactoe\Moves\MoveFactory.class
+com\lennart\tictactoe\Moves\MoveXFactory.class
+com\lennart\tictactoe\Moves\MoveOFactory.class
+com\lennart\tictactoe\Moves\MoveO.class
+com\lennart\tictactoe\Board.class
+com\lennart\tictactoe\Moves\MoveOFactory$MoveOFactoryHolder.class
+com\lennart\tictactoe\Players\PlayerO.class
+com\lennart\tictactoe\Game.class
+com\lennart\tictactoe\Moves\MoveXFactory$MoveXFactoryHolder.class
+com\lennart\tictactoe\Utils\Coordinate.class
+com\lennart\tictactoe\Players\PlayerX.class
+com\lennart\tictactoe\Players\Player.class
+com\lennart\tictactoe\Moves\MoveX.class
+com\lennart\tictactoe\Moves\MoveXFactory$1.class

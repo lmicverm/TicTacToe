@@ -3,31 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.lennart.tictactoe;
+package com.lennart.tictactoe.Moves;
+
+import com.lennart.tictactoe.Utils.Coordinate;
 
 /**
  *
  * @author vermeirl
  */
-public class MoveO implements Move{
+public class MoveX implements Move{
     private final Coordinate coordinate;
     private final String indicationCharacter;
     
-    public MoveO(int x, int y){
+    public MoveX(int x, int y){
         coordinate = new Coordinate(x, y);
-        indicationCharacter = "O";
+        indicationCharacter = "X";
     }
     
-    @Override
-    public void draw() {
-        System.out.print("O");
-    }
-
     @Override
     public String getIndication() {
         return indicationCharacter;
     }
-
+    
     @Override
     public Coordinate getCoordinate() {
         return coordinate;

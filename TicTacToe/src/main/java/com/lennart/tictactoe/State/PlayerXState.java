@@ -1,0 +1,30 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.lennart.tictactoe.State;
+
+import com.lennart.tictactoe.Game;
+import com.lennart.tictactoe.Moves.Move;
+
+/**
+ *
+ * @author vermeirl
+ */
+public class PlayerXState implements PlayerState{
+
+    @Override
+    public void makeMove(int x, int y, Game game) {
+        Move[][] board = game.getBoard().getBoard();
+        if(board[x][y]==null){
+            Move newMove = game.getPlayerX().createMove(x, y);
+            board[x][y] = newMove;
+            game.getBoard().setBoard(board);
+            game.setState(new PlayerOState());
+        } else {
+            System.out.printf("Board at position " + board[x][y].getCoordinate() + " is already taken by " + board[x][y] + ". Try again.");
+        }
+    }
+    
+}

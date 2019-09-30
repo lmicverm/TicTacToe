@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.lennart.tictactoe;
+package com.lennart.tictactoe.Utils;
 
 /**
  *
@@ -66,6 +66,6 @@ public class Coordinate {
 
     @Override
     public String toString() {
-        return "Coordinate{" + "x=" + x + ", y=" + y + '}';
+        return "(" + x + ", " + y + ')';
     }
 }

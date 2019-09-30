@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.lennart.tictactoe;
+package com.lennart.tictactoe.Moves;
 
 /**
  *
  * @author vermeirl
  */
-public class PlayerO implements Player{
-    
+public interface MoveFactory {
+    public Move makeMove(int x, int y);
 }
