@@ -12,5 +12,8 @@ import com.lennart.tictactoe.Game;
  * @author vermeirl
  */
 public interface PlayerState {
-    public void makeMove(int x, int y, Game game);
+
+    public boolean makeMove(int x, int y, Game game);
+
+    public void getTurn();
 }

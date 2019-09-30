@@ -1,8 +1,6 @@
 package com.lennart.tictactoe;
 
-import com.lennart.tictactoe.Players.Player;
 import com.lennart.tictactoe.Moves.Move;
-import com.lennart.tictactoe.State.PlayerState;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -52,6 +50,8 @@ public class Board {
     }
 
     public void drawBoard() {
+        System.out.println("Current board: ");
+        System.out.println("");
         System.out.print(numberIndication);
         System.out.println("");
         for (int i = 0; i < height; i++) {
@@ -75,6 +75,9 @@ public class Board {
     }
     
     public boolean winningMove(Move move){
+        for(int i=0;i<3;i++){
+            
+        }
         return false;
     }
 }

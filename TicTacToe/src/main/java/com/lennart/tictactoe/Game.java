@@ -5,9 +5,11 @@
  */
 package com.lennart.tictactoe;
 
+import com.lennart.tictactoe.Moves.Move;
 import com.lennart.tictactoe.Players.Player;
 import com.lennart.tictactoe.Players.PlayerO;
 import com.lennart.tictactoe.Players.PlayerX;
+import com.lennart.tictactoe.State.PlayerOState;
 import com.lennart.tictactoe.State.PlayerState;
 
 /**
@@ -19,20 +21,22 @@ public class Game {
     private Player playerO;
     private Board board;
     private PlayerState state;
+    private Move lastMove = null;
     
     public Game(int height, int width){
         Board.init(height, width);
         board = Board.getInstance();
         playerO = new PlayerO();
         playerX = new PlayerX();
+        state = new PlayerOState();
     }
     
     public void setState(PlayerState newState){
         this.state = newState;
     }
     
-    public void makeMove(int x, int y){
-        state.makeMove(x, y, this);
+    public boolean makeMove(int x, int y){
+        return state.makeMove(x, y, this);
     }
 
     public Player getPlayerX() {
@@ -46,4 +50,26 @@ public class Game {
     public Board getBoard() {
         return board;
     }
+    
+    public void getTurn(){
+        state.getTurn();
+    }
+    
+    public boolean isEnded(){
+        return board.winningMove(lastMove);
+    }
+
+    public Move getLastMove() {
+        return lastMove;
+    }
+
+    public void setLastMove(Move lastMove) {
+        this.lastMove = lastMove;
+    }
+    
+    public void printWinner(){
+        System.out.println("Player " + lastMove.getIndication() + " wins the game!");
+    }
+    
+    
 }
