@@ -9,8 +9,6 @@ package com.lennart.tictactoe;
  *
  * @author vermeirl
  */
-public interface Move {
-    public void draw();
-    public String getIndication();
-    public Coordinate getCoordinate();
+public interface MoveFactory {
+    public Move makeMove();
 }

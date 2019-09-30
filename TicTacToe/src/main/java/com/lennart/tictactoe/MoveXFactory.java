@@ -9,8 +9,11 @@ package com.lennart.tictactoe;
  *
  * @author vermeirl
  */
-public interface Move {
-    public void draw();
-    public String getIndication();
-    public Coordinate getCoordinate();
+public class MoveXFactory implements MoveFactory{
+
+    @Override
+    public Move makeMove() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }
