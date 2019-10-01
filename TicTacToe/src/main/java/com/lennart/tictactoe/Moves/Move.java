@@ -3,12 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.lennart.tictactoe;
+package com.lennart.tictactoe.Moves;
+
+import com.lennart.tictactoe.Utils.Coordinate;
 
 /**
  *
  * @author vermeirl
  */
-public class PlayerO implements Player{
-    
+public interface Move {
+    public String getIndication();
+    public Coordinate getCoordinate();
 }

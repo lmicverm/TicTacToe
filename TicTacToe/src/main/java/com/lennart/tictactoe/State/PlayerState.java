@@ -3,12 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.lennart.tictactoe;
+package com.lennart.tictactoe.State;
+
+import com.lennart.tictactoe.Game;
 
 /**
  *
  * @author vermeirl
  */
-public interface Move {
-    
+public interface PlayerState {
+
+    public Game makeMove(int x, int y, Game game);
+
+    public void getTurn();
 }
