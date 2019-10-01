@@ -7,7 +7,7 @@ package com.lennart.tictactoe.Players;
 
 import com.lennart.tictactoe.Moves.Move;
 import com.lennart.tictactoe.Moves.MoveFactory;
-import com.lennart.tictactoe.Moves.MoveOFactory;
+import com.lennart.tictactoe.Moves.MoveXFactory;
 
 /**
  *
@@ -17,7 +17,7 @@ public class PlayerX implements Player{
     private final MoveFactory moveFactory;
     
     public PlayerX(){
-        moveFactory = MoveOFactory.getInstance();
+        moveFactory = MoveXFactory.getInstance();
     }
     
     public Move createMove(int x, int y){

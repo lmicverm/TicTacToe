@@ -15,19 +15,18 @@ import com.lennart.tictactoe.Moves.Move;
 public class PlayerOState implements PlayerState{
 
     @Override
-    public boolean makeMove(int x, int y, Game game) {
+    public Game makeMove(int x, int y, Game game) {
         Move[][] board = game.getBoard().getBoard();
-        if(board[x][y]==null){
+        if(board[y][x]==null){
             Move newMove = game.getPlayerO().createMove(x, y);
-            board[x][y] = newMove;
+            board[y][x] = newMove;
             game.getBoard().setBoard(board);
             game.setState(new PlayerXState());
             game.setLastMove(newMove);
-            return true;
         } else {
-            System.out.printf("Board at position " + board[x][y].getCoordinate() + " is already taken by " + board[x][y] + ". Try again.");
-            return false;
+            System.out.printf("Board at position " + board[y][x].getCoordinate() + " is already taken by " + board[y][x] + ". Try again.\n");
         }
+        return game;
     }
 
     @Override

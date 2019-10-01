@@ -28,6 +28,8 @@ public class Main {
             int x = obj.nextInt();
             int y = obj.nextInt();
             boolean moveOK = game.makeMove(x, y);
+            game.getBoard().drawBoard();
+            game.getTurn();
             if (moveOK){
                 winnerKnown = game.isEnded();
             }

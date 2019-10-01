@@ -36,7 +36,14 @@ public class Game {
     }
     
     public boolean makeMove(int x, int y){
-        return state.makeMove(x, y, this);
+        Game newGame = state.makeMove(x, y, this);
+        state = newGame.getState();
+        board = newGame.getBoard();
+        if(newGame.getLastMove()==null){
+            return false;
+        }
+        lastMove = newGame.getLastMove();
+        return true;
     }
 
     public Player getPlayerX() {
@@ -69,6 +76,10 @@ public class Game {
     
     public void printWinner(){
         System.out.println("Player " + lastMove.getIndication() + " wins the game!");
+    }
+
+    public PlayerState getState() {
+        return state;
     }
     
     

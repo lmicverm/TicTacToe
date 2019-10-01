@@ -13,7 +13,7 @@ import com.lennart.tictactoe.Game;
  */
 public interface PlayerState {
 
-    public boolean makeMove(int x, int y, Game game);
+    public Game makeMove(int x, int y, Game game);
 
     public void getTurn();
 }

@@ -1,6 +1,7 @@
 package com.lennart.tictactoe;
 
 import com.lennart.tictactoe.Moves.Move;
+import java.util.Arrays;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -73,10 +74,81 @@ public class Board {
     public void setBoard(Move[][] board) {
         this.board = board;
     }
-    
-    public boolean winningMove(Move move){
-        for(int i=0;i<3;i++){
-            
+
+    public boolean winningMove(Move move) {
+        int x = move.getCoordinate().getX();
+        int y = move.getCoordinate().getY();
+        String winningString = move.getIndication() + move.getIndication() + move.getIndication();
+        String[] temp = new String[12];
+        Arrays.fill(temp, "");
+        for (int i = 0; i < 3; i++) {
+            if (x + i < 0 || y + i < 0 || x + i >= width || y + i >= height || board[y + i][x + i] == null) {
+                temp[0] += " ";
+            } else {
+                temp[0] += board[y + i][x + i].getIndication();
+            }
+            if (x - i < 0 || y - i < 0 || x - i >= width || y - i >= height || board[y - i][x - i] == null) {
+                temp[1] += " ";
+            } else {
+                temp[1] += board[y - i][x - i].getIndication();
+            }
+            if (x + i < 0 || y - i < 0 || x + i >= width || y - i >= height || board[y - i][x + i] == null) {
+                temp[2] += " ";
+            } else {
+                temp[2] += board[y - i][x + i].getIndication();
+            }
+            if (x - i < 0 || y + i < 0 || x - i >= width || y + i >= height || board[y + i][x - i] == null) {
+                temp[3] += " ";
+            } else {
+                temp[3] += board[y + i][x - i].getIndication();
+            }
+            if (y + i < 0 || y + i >= height || board[y + i][x] == null) {
+                temp[4] += " ";
+            } else {
+                temp[4] += board[y + i][x].getIndication();
+            }
+            if (y - i < 0 || y - i >= height || board[y - i][x] == null) {
+                temp[5] += " ";
+            } else {
+                temp[5] += board[y - i][x].getIndication();
+            }
+            if (x + i < 0 || x + i >= width || board[y][x + i] == null) {
+                temp[6] += " ";
+            } else {
+                temp[6] += board[y][x + i].getIndication();
+            }
+            if (x - i < 0 || x - i >= width || board[y][x - i] == null) {
+                temp[7] += " ";
+            } else {
+                temp[7] += board[y][x - i].getIndication();
+            }
+        }
+        for (int i = -1; i < 2; i++) {
+            if (x + i < 0 || y + i < 0 || x + i >= width || y + i >= height || board[y + i][x + i] == null) {
+                temp[8] += " ";
+            } else {
+                temp[8] += board[y + i][x + i].getIndication();
+            }
+            if (x - i < 0 || y + i < 0 || x - i >= width || y + i >= height || board[y + i][x - i] == null) {
+                temp[9] += " ";
+            } else {
+                temp[9] += board[y + i][x - i].getIndication();
+            }
+            if (y + i < 0 || y + i >= height || board[y + i][x] == null) {
+                temp[10] += " ";
+            } else {
+                temp[10] += board[y + i][x].getIndication();
+            }
+            if (x + i < 0 || x + i >= width || board[y][x + i] == null) {
+                temp[11] += " ";
+            } else {
+                temp[11] += board[y][x + i].getIndication();
+            }
+        }
+        for (String t : temp) {
+            if (t.equals(winningString)) {
+                return true;
+            }
         }
         return false;
     }
